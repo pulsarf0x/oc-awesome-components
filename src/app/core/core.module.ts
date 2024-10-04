@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {SharedModule} from "../shared/shared.module";
 import {HeaderComponent} from "./components/header/header.component";
 import {RouterModule} from "@angular/router";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 
@@ -14,7 +15,8 @@ import {RouterModule} from "@angular/router";
     CommonModule,
     SharedModule,
     HeaderComponent,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,
