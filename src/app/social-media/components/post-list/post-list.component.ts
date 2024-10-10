@@ -4,6 +4,7 @@ import {map, Observable} from "rxjs";
 import {Post} from "../../models/post.model";
 import {ActivatedRoute} from "@angular/router";
 import {AsyncPipe, NgForOf} from "@angular/common";
+import {PostsService} from "../../services/posts.service";
 
 @Component({
   selector: 'app-post-list',
@@ -19,12 +20,19 @@ import {AsyncPipe, NgForOf} from "@angular/common";
 export class PostListComponent implements OnInit {
   posts$!: Observable<Post[]>
 
-  constructor(private route: ActivatedRoute) {
+  constructor(
+    private route: ActivatedRoute,
+    private postService: PostsService
+  ) {
   }
 
   ngOnInit() {
     this.posts$ = this.route.data.pipe(
       map(data => data['posts'])
     )
+  }
+
+  onPostCommented(postCommented: { comment: string, postId: number }) {
+    this.postService.addNewComment(postCommented)
   }
 }
