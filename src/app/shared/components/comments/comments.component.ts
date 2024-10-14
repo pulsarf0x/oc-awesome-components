@@ -3,6 +3,7 @@ import {Comment} from "../../../core/models/comment.model";
 import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {SharedModule} from "../../shared.module";
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
+import {TimeAgoPipe} from "../../pipes/time-ago.pipe";
 
 @Component({
   selector: 'app-comments',
@@ -11,7 +12,8 @@ import {FormBuilder, FormControl, Validators} from "@angular/forms";
     NgForOf,
     DatePipe,
     SharedModule,
-    NgIf
+    NgIf,
+    TimeAgoPipe
   ],
   templateUrl: './comments.component.html',
   styleUrl: './comments.component.scss'
