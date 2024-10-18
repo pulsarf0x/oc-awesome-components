@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MaterialModule} from "./material.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ShortenPipe} from "./pipes/shorten.pipe";
+import {HighlightDirective} from "./directives/highlight.directive";
 
 @NgModule({
   declarations: [
@@ -12,12 +13,14 @@ import {ShortenPipe} from "./pipes/shorten.pipe";
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
-    ShortenPipe
+    ShortenPipe,
+    HighlightDirective
   ],
   exports: [
     MaterialModule,
     ReactiveFormsModule,
-    ShortenPipe
+    ShortenPipe,
+    HighlightDirective
   ]
 })
 export class SharedModule { }
