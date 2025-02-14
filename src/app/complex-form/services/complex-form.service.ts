@@ -8,16 +8,7 @@ import {environment} from "../../../environments/environment";
   providedIn: 'root'
 })
 export class ComplexFormService {
-  private httpClient!: HttpClient
-
-  constructor(private injector: Injector) { }
-
-  private get http(): HttpClient {
-    if (!this.httpClient) {
-      this.httpClient = this.injector.get(HttpClient);
-    }
-    return this.httpClient;
-  }
+  constructor(private http: HttpClient) { }
 
   saveUserInfo(formValue: ComplexFormValue): Observable<boolean> {
     return this.http.post(`${environment.apiUrl}/users`, formValue).pipe(
