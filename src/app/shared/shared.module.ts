@@ -6,9 +6,7 @@ import {ShortenPipe} from "./pipes/shorten.pipe";
 import {HighlightDirective} from "./directives/highlight.directive";
 
 @NgModule({
-  declarations: [
-
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     MaterialModule,
